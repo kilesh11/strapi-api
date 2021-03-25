@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  api:
+    image: strapi/strapi
+    restart: unless-stopped
+    container_name: strapi
+    env_file: .env
+    environment:
+      APP_NAME: strapi-app
+      DATABASE_CLIENT: mongo
+    ports: 
+      - 1338:1337
+    volumes:
+      - ./app:/srv/app
