@@ -1,15 +1,19 @@
 version: '3'
 
 services:
-  api:
-    image: strapi/strapi
+  strapi:
+    image: strapi/strapi:alpine
     restart: unless-stopped
     container_name: strapi
     env_file: .env
+    networks: 
+      - 'nginx'
     environment:
       APP_NAME: strapi-app
       DATABASE_CLIENT: mongo
-    ports: 
-      - 1338:1337
     volumes:
       - ./app:/srv/app
+networks:
+  nginx:
+    external:
+      name: nginx_reverse_proxy
