@@ -1,7 +1,6 @@
 module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
-  url: 'https://kyleslab.net/strapi',
   admin: {
     auth: {
       secret: env('ADMIN_JWT_SECRET', '74d6c6c8680b0cad8fed8d0692c5240a'),

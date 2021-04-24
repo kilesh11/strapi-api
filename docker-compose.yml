@@ -13,7 +13,7 @@ services:
       DATABASE_CLIENT: mongo
     volumes:
       - ./app:/srv/app
-    command: 'strapi start'
+    # command: 'strapi start'
     # comment command section for development and remove .env NODE_ENV key
 networks:
   nginx:
